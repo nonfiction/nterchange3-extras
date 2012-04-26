@@ -1,0 +1,10 @@
+#!/bin/sh
+
+username=your_username
+host=www.target.server.com
+client=client_foldername
+
+lessc --compress less/bootstrap.typography.less > bootstrap.typography.css
+lessc --compress less/bootstrap.less > bootstrap.min.css
+
+scp *.css $username@$host:/var/www/clients/$client/public_html/stylesheets/

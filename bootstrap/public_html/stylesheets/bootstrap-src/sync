@@ -1,0 +1,9 @@
+#!/bin/sh
+
+username=your_username
+host=www.target.server.com
+client=client_foldername
+
+./compile
+
+scp -r ./less $username@$host:/var/www/clients/$client/public_html/stylesheets/bootstrap-src/
