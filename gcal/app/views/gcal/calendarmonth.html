@@ -1,0 +1,36 @@
+<div class="calendar_month{$current}" id="cal_month_{$monthID}">
+  <div class="calendar_header">
+    <span class="cal_prevMonth" data-source="cal_month_{$monthID}">&lt;&lt;&lt;</span>
+    <span class="cal_month"> {$month_year} </span>
+    <span class="cal_nextMonth" data-source="cal_month_{$monthID}">&gt;&gt;&gt;</span>
+  </div>
+  <table class="calendar_table">
+  {foreach from=$calendar item=calRow}
+    <tr>
+    {foreach from=$calRow item=calDay}
+      {if $calDay.hasEvent}
+        <td data-source="event_day_{$calDay.day}{$monthID}" class="active {$calDay.class}">{$calDay.day}</td>
+      {else}
+        <td class="{$calDay.class}">{$calDay.day}</td>
+      {/if}
+    {/foreach}
+    </tr>
+  {/foreach}
+  </table>
+  <div class="calendar_events">
+  {foreach from=$calendar item=calRow}
+    {foreach from=$calRow item=calDay}
+      <div class="cal_event event_day_{$calDay.day}{$monthID}">
+        {foreach from=$calDay.events item=event}
+          {if $event.title}
+              <h4>{$event.title}<span class="cal_ev_close"> x</span></h4>
+              <p class="event_day">{$event.month} {$event.day}, {$event.year}</p>
+              <p>{$event.content|nl2br}</p>
+          {/if}
+        {/foreach}
+      </div>
+    {/foreach}
+  {/foreach}
+  
+  </div>
+</div>
