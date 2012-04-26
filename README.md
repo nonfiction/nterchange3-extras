@@ -13,11 +13,11 @@ Installing add-ons
 The simplest method is to tar/gzip the **contents** of the add-on you want to
 install, copy it to your site's root and extract it:
 
-$ cd nterchange3-extras/bootstrap
-$ tar -czf bootstrap.tgz *
-$ cp bootstrap.tgz your_project_root/
-$ cd your_project_root/
-$ tar -xzf bootstrap.tgz
+    $ cd nterchange3-extras/bootstrap
+    $ tar -czf bootstrap.tgz *
+    $ cp bootstrap.tgz your_project_root/
+    $ cd your_project_root/
+    $ tar -xzf bootstrap.tgz
 
 If the directory structure of the add-on matches nterchange this should put
 everything in it's right place. If you end up with a folder named bootstrap/ 
