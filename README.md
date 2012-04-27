@@ -10,7 +10,11 @@ instructions for intent, installation and use.
 Installing add-ons
 ------------------
 
-The simplest method is to tar/gzip the **contents** of the add-on you want to
+New method. For example, to install bootstrap on pennwest site:
+    
+    $ ./deploy -c pennwest bootstrap
+
+The *old* method is to tar/gzip the **contents** of the add-on you want to
 install, copy it to your site's root and extract it:
 
     $ cd nterchange3-extras/bootstrap
