@@ -3,7 +3,7 @@
 from optparse import OptionParser
 import os, subprocess
 
-usage = "usage: %prog [options] folder_name"
+usage = "usage: %prog [options] folder_name\n\nExample:\n       %prog -c athabasca_2011 bootstrap"
 parser = OptionParser(usage=usage)
 parser.add_option("-c", "--client", dest="client", default=False,
                   help="eg: nonfiction")
@@ -11,6 +11,10 @@ parser.add_option("-t", "--target-host",
                   action="store", dest="target", default='www.tb.nonwebdev.com',
                   help="default: www.tb.nonwebdev.com",
                   metavar="HOSTNAME")
+parser.add_option("-u", "--user",
+                  action="store", dest="user",
+                  metavar="USERNAME")
+
 
 (options, args) = parser.parse_args()
 
@@ -33,7 +37,11 @@ if not os.path.isdir(folder_name):
   parser.print_usage()
   exit()
 
-user = os.popen('whoami').read().strip()
+if options.user:
+  user = options.user
+else:
+  user = os.popen('whoami').read().strip()
+
 target = '%s@%s:/var/www/clients/%s/' % (user, options.target, options.client)
 command = ['rsync', '-avz', folder_name, target]
 
