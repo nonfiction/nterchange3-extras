@@ -39,4 +39,4 @@ in the README about what needs to be done (eg: stylesheets/default.your_add_on.c
 
 Before committing, be sure to chmod -R 775 the add-on folder, or you may break things!
 
-  chmod -R 775 your_add_on
+    chmod -R 775 your_add_on
