@@ -10,4 +10,4 @@ To activate, add the following to your template:
 
 And test it out:
     
-    TINY.box.show({html:'This is a warning!',animate:false,close:false,boxid:'error',top:5})
+    TINY.box.show({html:'<h3>Hello TinyBox World!</h3>'})
