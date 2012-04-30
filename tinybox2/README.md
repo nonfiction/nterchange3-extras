@@ -1,7 +1,7 @@
 TinyBox - Simple, no requirements JS popups
 ==================
 
-    <http://www.scriptiny.com/2011/03/javascript-modal-windows/>
+<http://www.scriptiny.com/2011/03/javascript-modal-windows/>
 
 To activate, add the following to your template:
 
