@@ -4,15 +4,15 @@ nterchange3-extras
 Assets, frontend boilerplate and frameworks to mix into nterchange.
 
 Each addon lives in a folder that mimics the directory structure of
-the nterchange front end. Each folder should contain a README with any
+the front end. Each folder should contain a README with any
 instructions for intent, installation and use.
 
 Installing add-ons
 ------------------
 
-New method. For example, to install bootstrap on pennwest site:
+New method. For example, to install bootstrap on yoursite site:
     
-    $ ./deploy -c pennwest bootstrap
+    $ ./deploy -c yoursite bootstrap
 
 The *old* method is to tar/gzip the **contents** of the add-on you want to
 install, copy it to your site's root and extract it:
