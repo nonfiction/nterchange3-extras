@@ -10,6 +10,10 @@ instructions for intent, installation and use.
 Installing add-ons
 ------------------
 
+*Permissions Warning* git doesn't track folder permissions, so you
+may make the site inaccessible if you don't make the folder group-readable
+`chmod -R 775` the folder before deploy. **todo: fix this**
+
 New method. For example, to install bootstrap on yoursite site:
     
     $ ./deploy -c yoursite bootstrap
