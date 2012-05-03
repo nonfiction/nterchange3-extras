@@ -1,0 +1,29 @@
+<p><b>Results:</b>{$total} item(s) found</p>
+
+<div id="search-results">
+  <dl>
+  {foreach from=$items item=item}
+    <dt>
+      <a href="{$item.url}">{$item.title}</a>
+      <cite>{$item.url}</cite>
+    </dt>
+    <dd>{$item.content}...</dd>
+  {/foreach}
+  </dl>
+</div>
+
+
+<div id="search-pagination"> 
+  {if $previous_page > -1}<a href="{$previous_page}">Previous Page</a>&nbsp;|&nbsp;{/if}
+
+  {foreach from=$pages item=page key=i}
+    {if $i}&nbsp;|&nbsp;{/if}
+    {if $page == $current_page}
+      <a><strong>{$i+1}</strong></a> 
+    {else}
+      <a href="{$page}">{$i+1}</a> 
+    {/if}
+  {/foreach} 
+
+  {if $next_page > -1}&nbsp;|&nbsp;<a href="{$next_page}">Next Page</a>{/if}
+</div>
