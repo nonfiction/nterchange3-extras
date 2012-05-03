@@ -1,7 +1,7 @@
 TinyBox - Simple, no requirements JS popups
 ==================
 
-    <http://www.scriptiny.com/2011/03/javascript-modal-windows/>
+<http://www.scriptiny.com/2011/03/javascript-modal-windows/>
 
 To activate, add the following to your template:
 
@@ -10,4 +10,4 @@ To activate, add the following to your template:
 
 And test it out:
     
-    TINY.box.show({html:'This is a warning!',animate:false,close:false,boxid:'error',top:5})
+    TINY.box.show({html:'<h3>Hello TinyBox World!</h3>'})
