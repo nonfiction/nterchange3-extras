@@ -14,8 +14,8 @@ $.expr[':'].external = function(obj){
  */
 $.expr[':'].current = function(obj){
   var hrefmatch = /^\/|\.html$|(\/)$/g
-  ,   target  = obj.pathname.replace(hrefmatch, '')
-  ,   current = window.location.pathname.replace(hrefmatch, '')
+  ,   target  = obj.pathname.replace(hrefmatch, '') + obj.hash
+  ,   current = window.location.pathname.replace(hrefmatch, '') + window.location.hash
   ,   page_id = '_'+document.pageid;
   return ( target == current || target == page_id );
 };
