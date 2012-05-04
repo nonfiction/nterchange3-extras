@@ -53,4 +53,8 @@ command = [
 ]
 
 if subprocess.call(command):
-  print 'success!'
+  print 'Rsync had a problem, this is what it was trying: '
+  print ' '.join(command)
+  exit()
+
+print 'All done!'
