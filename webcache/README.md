@@ -2,24 +2,22 @@ Webcache
 ========
 
 Store external feeds, processed data, or whatever you want
-using MySQL as a key value store. This is a model-only asset meant
-to be used by other assets for getting and setting data.
-
-Install
--------
-
-After uploading, run `rake` to create the webcache table in the DB.
+using the Nterchange Cache as a key value store.
 
 Examples
 --------
 
-Grab some remote data
+Remote data methods
 
     $cache = &NModel::singleton('webcache');
     $data = $cache->wget('http://somedata.com/feed.xml', $ttl=5);
-    
-Or store some results
 
+    // or use getXML() which returns a DOM tree
+    $data = $cache->getXML('http://pinecliffenergy.mwnewsroom.com/xml-feed', 0.1);
+    
+Key/value store methods
+
+    $cache = &NModel::singleton('webcache');
     $data = $cache->get('mydata', $ttl=1440);
     if (!$data){
       $data = some_time_consuming_stuff();
