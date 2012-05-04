@@ -10,10 +10,6 @@ instructions for intent, installation and use.
 Installing add-ons
 ------------------
 
-*Permissions Warning* git doesn't track folder permissions, so you
-may make the site inaccessible if you don't make the folder group-readable
-`chmod -R 775` the folder before deploy. **todo: fix this**
-
 New method. For example, to install bootstrap on yoursite site:
     
     $ ./deploy -c yoursite bootstrap
@@ -29,7 +25,7 @@ install, copy it to your site's root and extract it:
 
 If the directory structure of the add-on matches nterchange this should put
 everything in it's right place. If you end up with a folder named bootstrap/ 
-in the project root, you've packaged the folder itself, not the contents. 
+in the project root, you've packaged the folder itself, not the contents.
 
 Building new add-ons
 --------------------
@@ -41,6 +37,7 @@ general, do not include files like stylesheets/default.css or other distribution
 files, just include a file with the recommended changes to those files with a note
 in the README about what needs to be done (eg: stylesheets/default.your_add_on.css)
 
-Before committing, be sure to chmod -R 775 the add-on folder, or you may break things!
-
-    chmod -R 775 your_add_on
+**Note on permissions** - since git doesn't preserve folder permissions the
+deploy script changes all file/folder permissions to 775 or `rwxrwxr-x`. This
+should cover most cases, unless your writing to the /var or public_html/uploads
+folders. If you are, make a note of it in the README.

@@ -43,7 +43,7 @@ else:
   user = os.popen('whoami').read().strip()
 
 target = '%s@%s:/var/www/clients/%s/' % (user, options.target, options.client)
-command = ['rsync', '-avz', folder_name, target]
+command = ['rsync', '-avz', '--exclude', 'README*', '--chmod=ugo+rwx,o-w' ,folder_name, target]
 
 if subprocess.call(command):
   print 'success!'
