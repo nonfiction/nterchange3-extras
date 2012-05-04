@@ -10,22 +10,13 @@ instructions for intent, installation and use.
 Installing add-ons
 ------------------
 
-New method. For example, to install bootstrap on yoursite site:
-    
-    $ ./deploy -c yoursite bootstrap
+This is all there is to it:
 
-The *old* method is to tar/gzip the **contents** of the add-on you want to
-install, copy it to your site's root and extract it:
+    $ ./deploy -c your_site name_of_folder
 
-    $ cd nterchange3-extras/bootstrap
-    $ tar -czf bootstrap.tgz *
-    $ cp bootstrap.tgz your_project_root/
-    $ cd your_project_root/
-    $ tar -xzf bootstrap.tgz
-
-If the directory structure of the add-on matches nterchange this should put
-everything in it's right place. If you end up with a folder named bootstrap/ 
-in the project root, you've packaged the folder itself, not the contents.
+You can also target a host other than our dev server with the -t option or specify
+a different username (other than `whoami`) on the remote with the -u option.
+`./deploy --help` for more info.
 
 Building new add-ons
 --------------------
@@ -34,7 +25,7 @@ Just create a new folder with a descriptive title, and add the directories and
 files that should be added/changed to the nterchange folder on the target server.
 Be sure to note in the README any files that may overwrite existing files. In 
 general, do not include files like stylesheets/default.css or other distribution
-files, just include a file with the recommended changes to those files with a note
+files, just include a file with the recommended changes to those files and a note
 in the README about what needs to be done (eg: stylesheets/default.your_add_on.css)
 
 **Note on permissions** - since git doesn't preserve folder permissions the
