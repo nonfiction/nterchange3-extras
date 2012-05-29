@@ -1,0 +1,93 @@
+.poll_container {
+  position: relative;
+  color: #fefffe;
+  width: 172px;
+  background-color: #629ec9;
+  padding: 2px 20px 50px;
+  margin: 2px 0 20px;
+  font-size: 14px;
+  border: 1px solid #19536c;
+  border-width: 0 1px;
+}
+
+#main .poll_container h2, #side .poll_container h2, #main .poll_container h2 {
+  width: 100%;
+  padding: 6px 18px;
+  background-color: #4986b4;
+  margin: 0 0 15px -18px;
+  font-size: 140%;
+  text-align: center;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-bottom-color: #59a3dc;
+  background-image: none;
+}
+
+
+.poll_container input[type='submit'], .poll_container a {
+  color: #FFF; 
+  background-color: #446d8b; 
+  padding: 4px 0; 
+  margin: 0; 
+  display: block;
+  position: absolute;
+  bottom: 15px; left: 15px;
+  width: 90px;
+  text-align: center;
+  border: 0; 
+  font: bold 12px sans-serif; 
+  cursor: pointer; 
+}
+
+.poll_container a#view_results {
+  left: auto;
+  right: 15px;
+}
+
+.poll_container p { margin-bottom: 0; line-height: 1.3em; font-size: 13px; }
+
+.poll_container input[type="radio"] { margin-right: 8px; margin-top: 8px; }
+
+.poll_container label { line-height: 1em; font-weight: normal; font-size: 13px; }
+
+.poll_container .result_row { }
+
+.poll_container .percent { 
+  font-weight: bold;
+  font-size: 110%;
+  display: block;
+  margin: 4px 0 2px;
+}
+
+.poll_container .option { margin: 2px 0;  font-size: 13px; }
+
+.poll_container .percent.min    { opacity: 0.3; }
+.poll_container .percent.twenty { opacity: 0.6; }
+.poll_container .percent.forty  { opacity: 0.7; }
+.poll_container .percent.sixty  { opacity: 0.8; }
+.poll_container .percent.eighty { opacity: 0.9; }
+.poll_container .percent.max    { opacity: 1; }
+.poll_container .flash {
+  background-color: white;
+  padding: 5px;
+  width: 100%;
+  margin-left: -5px;
+  font-size: 90%;
+  color: #222;
+}
+
+.poll-top, .poll-bottom { 
+  position: absolute; 
+  top: -3px; 
+  left: 0; 
+  height: 3px; 
+  width: 213px; 
+  background-image: url(/images/layout/poll-borders.png);
+  background-position: left top; 
+}
+
+.poll-bottom {
+  top: auto;
+  bottom: -3px;
+  background-position: bottom left;
+}

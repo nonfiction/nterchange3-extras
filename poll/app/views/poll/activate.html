@@ -1,0 +1,17 @@
+<h1>Activate Poll</h1>
+
+<div class="pollview">
+  <h4>{$cms_headline}</h4>
+  {include file='poll/__pollresults.html'}
+</div>
+
+<form method="post">
+  <label>Activate Poll?</label>
+  {if $active}
+    <input type="checkbox" name="activate" checked="checked">
+  {else}
+    <input type="checkbox" name="activate">
+  {/if}
+  <input type="submit" value="Save">
+  <p><small><a href="/nterchange/poll/viewlist">Exit without activating</a></small></p>
+</form>

@@ -1,0 +1,15 @@
+<div class="poll-top"></div>
+<h2>Take Our Poll</h2>
+<div class="poll">
+  <p><strong>{$cms_headline}</strong></p>
+  
+  <form method="post" id="poll_submission_form">
+    <input type="hidden" name="poll_id" value="{$id}">
+    {foreach from=$poll_values item=val key=k}
+    <input type="radio" name="values" value="{$k}"><label>{$val.title}</label><br>
+    {/foreach}
+    <input type="submit" value="Vote Now">
+    <a id='view_results' href="#results">View Results</a>
+  </form>
+</div>
+<div class="poll-bottom"></div>

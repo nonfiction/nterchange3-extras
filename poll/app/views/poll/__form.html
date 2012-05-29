@@ -1,0 +1,17 @@
+<form action="{$id}" method="post">
+  <input type="hidden" name='id' value="{$id}">
+  <label>Question</label><input name='question' type="text" value="{$cms_headline}">
+  <br>
+  <label># of Options</label>
+  <select name="question_count">
+    {foreach from=$questions item=q}
+    {if $q eq $question_count}
+    <option value="{$q}" selected="selected">{$q}</option>
+    {else}
+    <option value="{$q}">{$q}</option>
+    {/if}
+    {/foreach}
+  </select>
+  <br>
+  <input type="submit" value="Continue">
+</form>

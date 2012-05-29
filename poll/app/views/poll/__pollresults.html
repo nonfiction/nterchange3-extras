@@ -1,0 +1,3 @@
+{foreach from=$poll_values item=val key=k}
+  <div class='result_row'><div class="percent {textstyle for=$val.percent}">{$val.percent}%</div><div class='option'>{$val.title}</div></div>
+{/foreach}

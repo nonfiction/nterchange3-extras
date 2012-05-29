@@ -1,0 +1,10 @@
+<div class="poll-top"></div>
+<h2>Results</h2>
+<div class="poll">
+  <p><strong>{$cms_headline}</strong></p>
+  {include file='poll/__pollresults.html'}
+  {if $flash}<div class='flash'>{$flash}</div>{/if}
+  <a id="view_poll" href='#poll'>Vote Now</a>
+  <a id="view_results" href="#results">View Results</a>
+</div>
+<div class="poll-bottom"></div>

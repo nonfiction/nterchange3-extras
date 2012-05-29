@@ -1,0 +1,14 @@
+<h1>Set Values</h1>
+<h3>{$question}</h3>
+
+<form action="" method="post">
+
+  <input type="hidden" name='poll_id' value="{$poll_id}">
+
+  {foreach from=$values item=val key=k}
+    <input type="text" name="{$k}" value="{$val.title}"><br>
+  {/foreach}
+
+  <input type="submit" value="Continue">
+
+</form>
