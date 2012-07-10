@@ -1,0 +1,23 @@
+{php}
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . "{$thumbnail_image}")) {
+  list($width,$height) = getImageSize($_SERVER['DOCUMENT_ROOT'] .$this->_tpl_vars['thumbnail_image']);
+  $width = "{$width}px";
+  $height = "{$height}px";
+}
+{/php}
+{$_EDIT_START_}
+<div id="youtube-{$id}" class="youtube {$align}">
+  <a href="/_page{$embed_page}?vid_id={$id}" title="{$link_text}" class="lightwindow" rel="Gallery[YouTube Videos]" params="lightwindow_width=610,lightwindow_height=390">
+  {if $thumbnail_image}
+    <div class="link-image" style="width: {php}print $width;{/php}; height: {php}print $height;{/php};">
+      <img src="{$thumbnail_image}" alt="YouTube Video {$link_text}">
+      <div class="corner top_left"></div>
+      <div class="corner top_right"></div>
+      <div class="corner bottom_left"></div>
+      <div class="corner bottom_right"></div>
+    </div>
+  {/if}
+  {if $link_text}<div class="youtube_description">{$link_text}</div>{/if}
+  </a>
+</div>
+{$_EDIT_END_}
