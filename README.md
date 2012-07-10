@@ -7,6 +7,12 @@ Each addon lives in a folder that mimics the directory structure of
 the front end. Each folder should contain a README with any
 instructions for intent, installation and use.
 
+Setup
+------------------
+
+Change target host in config.py to the server address where you want to
+deploy to.
+
 Installing add-ons
 ------------------
 
@@ -14,7 +20,7 @@ This is all there is to it:
 
     $ ./deploy -c your_site name_of_folder
 
-You can also target a host other than our dev server with the -t option or specify
+You can also target a host other than the one in config.py with the -t option or specify
 a different username (other than `whoami`) on the remote with the -u option.
 `./deploy --help` for more info.
 

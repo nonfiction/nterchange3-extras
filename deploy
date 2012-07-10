@@ -2,14 +2,16 @@
 
 from optparse import OptionParser
 import os, subprocess
+from config import target_host
 
-usage = "usage: %prog [options] folder_name\n\nExample:\n       %prog -c athabasca_2011 bootstrap"
+usage = "usage: %prog [options] folder_name\n\nExample:\n       %prog -c my_site bootstrap"
+
 parser = OptionParser(usage=usage)
 parser.add_option("-c", "--client", dest="client", default=False,
                   help="eg: nonfiction")
 parser.add_option("-t", "--target-host",
-                  action="store", dest="target", default='www.tb.nonwebdev.com',
-                  help="default: www.tb.nonwebdev.com",
+                  action="store", dest="target", default=target_host,
+                  help="default: %s" % target_host,
                   metavar="HOSTNAME")
 parser.add_option("-u", "--user",
                   action="store", dest="user",
