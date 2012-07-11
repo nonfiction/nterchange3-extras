@@ -11,14 +11,11 @@ class YoutubeController extends AssetController {
     parent::__construct();
   }
   
-  /**
-   * Code caller for displaying the video in lightwindow
-   * @param GET vid_id  example: /url?vid_id=12
-   */
   function embedVideo(){
-    $embed_page = 282;
-    $this->set('embed_page', $embed_page);
-    
+    // Assumes default output of Share > Embed ; eg:
+    // <iframe width="560" height="315" src="http://www.youtube.com/embed/ae73CUBqSo4" frameborder="0" allowfullscreen></iframe>
+    // width/height are modified and query string is appended to src
+
     $vid_id = (int)$this->getParam('vid_id');
     $model = $this->getDefaultModel();
 
@@ -38,7 +35,10 @@ class YoutubeController extends AssetController {
       $embed = $model->embed_html;
       $embed = preg_replace($w_pattern, $w_replace, $embed);
       $embed = preg_replace($h_pattern, $h_replace, $embed);
-      $embed = preg_replace($src_pattern, $src_replace, $embed);
+      if (! stristr($embed, '?')) {
+        // add the rel=0 if we don't have a query string
+        $embed = preg_replace($src_pattern, $src_replace, $embed);
+      }
       $this->set('embed', $embed);
       $this->render('lightwindow');
     }
